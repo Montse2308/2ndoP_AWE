@@ -1,1 +1,19 @@
-<p>Detalles del programa {{showName}}</p>
+@if (show) {
+  <div class="details-wrapper">
+    <h1 class="title">{{ show.name }}</h1>
+
+    <div class="details-layout">
+      <img [src]="show.image" alt="{{ show.name }}" class="poster" />
+
+      <div class="info">
+        <p><strong>Descripción:</strong> {{ show.description || 'Sin descripción' }}</p>
+        <p><strong>Año:</strong> {{ show.year }}</p>
+        <p><strong>Episodios:</strong> {{ show.episodes }}</p>
+        <p><strong>Género:</strong> {{ show.genre || 'Sin género' }}</p>
+        <p><strong>Likes:</strong> {{ show.likes.length }}</p>
+      </div>
+    </div>
+  </div>
+} @else {
+  <p class="not-found">Show no encontrado.</p>
+}

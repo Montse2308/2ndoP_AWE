@@ -13,12 +13,15 @@
     </mat-card-header>
     <img mat-card-image [src]="show!.image" alt="Photo of a Shiba Inu">
     <mat-card-content>
-        <p>
-            {{show!.description != "" ? show!.description : "Sin descripción"}}
-        </p>
-    </mat-card-content>
+        <mat-card-content>
+            <p>
+                {{show!.description != "" ? show!.description : "Sin descripción"}}
+            </p>
+        </mat-card-content>         
+    </mat-card-content>      
     <mat-card-actions>
         <button (click)="onSelected()" mat-button>{{isSelected ? "DESELECCIONAR" : "SELECCIONAR"}}</button>
         <button (click)="onDelete()" mat-button>ELIMINAR</button>
+        <button (click)="goToDetails()" mat-button>VER MÁS DETALLES</button>
     </mat-card-actions>
 </mat-card>

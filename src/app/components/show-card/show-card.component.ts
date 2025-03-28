@@ -4,6 +4,8 @@ import { NgClass } from '@angular/common';
 import { MatButtonModule } from '@angular/material/button';
 import { MatCardModule } from '@angular/material/card';
 
+import { Router } from '@angular/router';
+
 @Component({
   selector: 'app-show-card',
   imports: [NgClass, MatCardModule, MatButtonModule],
@@ -19,12 +21,18 @@ export class ShowCardComponent {
 
   isSelected: boolean = false;
 
+  constructor(private router: Router) {}
+
   onSelected(): void {
     this.isSelected = !this.isSelected;
   }
 
   onDelete(): void {
     this.onDeleteEvent.emit(this.show!.name);
+  }
+
+  goToDetails(): void {
+    this.router.navigate(['/tv-show-details', this.show!.name]);
   }
 
 }

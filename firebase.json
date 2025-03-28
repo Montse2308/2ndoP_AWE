@@ -1,6 +1,6 @@
 {
   "hosting": {
-    "public": "/dist/tv-shows-system/browser",
+    "public": "/dist/tv-shows-system",
     "ignore": [
       "firebase.json",
       "**/.*",

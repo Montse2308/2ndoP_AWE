@@ -194,4 +194,9 @@ export class TvShowService {
   createNewTvShow(show: Show): void {
     this._shows.push(show);
   }
+
+  getShowByName(name: string): Show | null {
+    return this.shows.find(show => show.name.toLowerCase() === name.toLowerCase()) || null;
+  }  
+  
 }
